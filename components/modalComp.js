@@ -5,35 +5,27 @@ export const modalComp = (
 	bodyText = "default body",
 	className = ""
 ) => {
+	// create the modal and add important attributes likes tabindex and some classes
 	const divElement = document.createElement("div")
 	divElement.setAttribute("tabindex", "-1")
 	divElement.classList.add("overlay-modal")
 	divElement.classList.add("d-none")
 
 	const handleClick = (e) => {
-		if (!e) return
-		if (e.target.classList.contains("overlay-modal")) {
-			return app.removeChild(divElement)
-		}
-		if (e.target.classList.contains("btn")) {
-			return app.removeChild(divElement)
-		}
+		// evaluate what classes the e (event) contains
 	}
 
 	divElement.addEventListener("click", handleClick)
 
-	const modalContent = document.createElement("div")
-	modalContent.classList.add("modal-content")
+	// create the modal content element (div) with a class "modal-content"
 
-	const modalHeader = document.createElement("header")
-	modalHeader.classList.add("modal-header")
-	modalHeader.classList.add(className)
+	// create the modal header element (div) with a class "modal-header"
+	// this element will also accept a dynamic class that will change its background color
+	// see modal.css
 
-	const modalTitle = document.createElement("h2")
-	modalTitle.innerText = titleText
+	// create a title that accepts text as dynamic data through the titleText param
 
-	const modalBody = document.createElement("div")
-	modalBody.classList.add("modal-body")
+	
 	// evaluate modal body
 	// console.log(typeof bodyText)
 
