@@ -8,11 +8,5 @@
 
 export const button = (text, onclick, className) => {
 	const btnElem = document.createElement("button")
-	btnElem.innerText = text
-	btnElem.classList.add(className)
-	btnElem.addEventListener("click", () => {
-		onclick()
-	})
-
 	return btnElem
 }
