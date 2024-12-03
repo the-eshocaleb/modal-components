@@ -25,15 +25,11 @@ export const modalComp = (
 
 	// create a title that accepts text as dynamic data through the titleText param
 
-	
-	// evaluate modal body
+	// create a body element with its class "class-body"
+	// evaluate bodyText
 	// console.log(typeof bodyText)
 
-	if (typeof bodyText === "string") {
-		modalBody.innerText = bodyText
-	} else {
-		modalBody.appendChild(bodyText)
-	}
+	// is it a text or a node element ?
 
 	modalHeader.appendChild(modalTitle)
 	modalHeader.appendChild(button("X", handleClick, "btn"))
@@ -43,6 +39,7 @@ export const modalComp = (
 	modalFooter.classList.add(className)
 	modalFooter.appendChild(button("Close", handleClick, "btn"))
 
+	// here you have some variable names that you can use to declare your different modal parts
 	modalContent.appendChild(modalHeader)
 	modalContent.appendChild(modalBody)
 	modalContent.appendChild(modalFooter)
