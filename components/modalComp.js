@@ -36,8 +36,9 @@ export const modalComp = (
 
 	const modalFooter = document.createElement("footer")
 	modalFooter.classList.add("modal-footer")
-	modalFooter.classList.add(className)
-	modalFooter.appendChild(button("Close", handleClick, "btn"))
+
+	// add dynamic class name for background color
+	// add a button component than handles the click event and passes a class too
 
 	// here you have some variable names that you can use to declare your different modal parts
 	modalContent.appendChild(modalHeader)
