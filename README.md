@@ -15,3 +15,4 @@ Lightweight and simple to integrate.
 Include the Script: Add the script to your project as shown above.
 Create a Modal: Use the provided createModal function to generate a modal with desired props.
 Customize with Props: Pass dynamic data and classes to control the modal’s content and styles.
+# modal-components
