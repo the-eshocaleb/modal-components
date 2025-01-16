@@ -1,7 +1,5 @@
 import { modalComp } from "../components/modalComp.js"
 
-let modal
-
 /**
  *
  * @param {string} className // three names "primary-btn" | "secondary-btn" | "third-color"
@@ -9,19 +7,41 @@ let modal
  */
 
 export const showModal = (className) => {
-	let modalBody
-	let modalTitle
-	// evaluate what class name is being passed "secondary-btn" | "primary-btn" |  "third-color"
+	// First, remove any existing modal
+	const existingModal = document.querySelector('.overlay-modal');
+	if (existingModal) {
+		existingModal.remove();
+	}
+
+	let modalBody = document.createElement("div")
+	let modalTitle = "Modal Title"
+
 	if (className === "secondary-btn") {
+		modalTitle = "Some other cool title"
+		modalBody.innerText = "This is another text of the body."
 	}
+	
 	if (className === "primary-btn") {
+		modalTitle = "Primary Modal"
+		modalBody.innerText = "This is a primary modal with custom content."
 	}
+	
 	if (className === "third-color") {
-		// if the third color class is passed add a title and an image with its attributes (source and alt)
+		modalTitle = "Mountain View"
+		const title = document.createElement("h3")
+		title.innerText = "Beautiful Mountain"
+		
+		const img = document.createElement("img")
+		img.src = "./assets/mountain.jpeg"
+		img.alt = "Mountain view"
+		
 		modalBody.appendChild(title)
 		modalBody.appendChild(img)
 	}
+
+	const app = document.getElementById("app")
 	app.appendChild(modalComp(modalTitle, modalBody, className))
-	modal = document.querySelector(".overlay-modal")
+	
+	const modal = document.querySelector(".overlay-modal")
 	modal.classList.remove("d-none")
 }
